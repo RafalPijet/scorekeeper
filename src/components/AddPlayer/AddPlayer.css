@@ -1,0 +1,30 @@
+.AddPlayer {
+    margin-top: 50px;
+}
+
+.AddPlayer__input {
+    background-color: #dfe6e9;
+    margin: 0 5px 10px 0;
+    border: none;
+    padding: 5px;
+    width: 250px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.AddPlayer__submit {
+    cursor: pointer;
+    font-size: 14px;
+    border: none;
+    padding: 6px;
+    background-color: #dfe6e9;
+    font-weight: 700;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.AddPlayer__submit:active {
+    background-color: #636e72;
+}

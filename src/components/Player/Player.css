@@ -1,0 +1,33 @@
+.Player {
+    display: flex;
+    justify-content: flex-start;
+    margin: 2px 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.Player__name {
+    margin-right: 2px;
+    background-color: #74b9ff;
+    padding: 5px;
+    max-width: 150px;
+    width: 100%;
+}
+
+.Player__score {
+    margin-right: 2px;
+    background-color: #74b9ff;
+    padding: 5px;
+    width: 60px;
+    text-align: center;
+}
+
+.Player__button {
+    margin-right: 2px;
+    background-color: #74b9ff;
+    padding: 5px;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+}

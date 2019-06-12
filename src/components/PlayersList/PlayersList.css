@@ -1,0 +1,8 @@
+.PlayersList {
+    max-height: 80vh;
+    width: 310px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
