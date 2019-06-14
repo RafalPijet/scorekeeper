@@ -7,27 +7,38 @@
     font-weight: 700;
 }
 
-.Player__name {
+[class*="Player__"] {
     margin-right: 2px;
     background-color: #74b9ff;
     padding: 5px;
+}
+
+[class*="button"]:active {
+    background-color: #0984e3;
+}
+
+.Player__name {
     max-width: 150px;
     width: 100%;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
 }
 
 .Player__score {
-    margin-right: 2px;
-    background-color: #74b9ff;
-    padding: 5px;
     width: 60px;
     text-align: center;
 }
 
 .Player__button {
-    margin-right: 2px;
-    background-color: #74b9ff;
-    padding: 5px;
     width: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.Player__button-remove {
+    width: 70px;
     text-align: center;
     cursor: pointer;
 }

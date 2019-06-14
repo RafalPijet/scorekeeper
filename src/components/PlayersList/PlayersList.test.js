@@ -1,8 +1,7 @@
 import PlayersList from './PlayersList';
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Player from "../Player/Player";
-import App from "../../App";
 
 it('renders without crashing', () => {
    shallow(<PlayersList players={[]} />);
@@ -46,4 +45,25 @@ it('should call onScoreUpdate', () => {
     onPlayerScoreChange(5);
 
     expect(mockedOnScoreUpdate).toBeCalledWith(1, 5);
+});
+
+it('should call onPlayerRemove', () => {
+    const players = [
+        {
+            name: 'Kunegunda',
+            score: 5
+        },
+        {
+            name: 'Antoś',
+            score: 0
+        }
+    ];
+    const mockedOnPlayerRemove = jest.fn();
+    const playerListComponent = mount(<PlayersList players={players} onPlayerRemove={mockedOnPlayerRemove} />);
+
+    const firstPlayer = playerListComponent.find(Player).first();
+    const removeButton = firstPlayer.find('.Player__button-remove');
+    removeButton.simulate('click');
+
+    expect(mockedOnPlayerRemove).toBeCalledWith(0);
 });

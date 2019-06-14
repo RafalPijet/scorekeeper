@@ -1,0 +1,33 @@
+input, label {
+    cursor: inherit;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    background-color: #a29bfe;
+    margin-top: 50px;
+    width: 365px;
+    height: 32px;
+    justify-content: space-between;
+}
+
+.multiplier {
+    display: inherit;
+    flex-direction: row;
+}
+
+.select-box {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.sort {
+    display: inherit;
+    align-items: center;
+    margin-right: 5px;
+    cursor: pointer;
+}
+

@@ -7,9 +7,12 @@ const PlayersList = props => (
         {props.players.map((player, i) => (
             <Player
                 key={i}
+                id={i}
                 name={player.name}
                 score={player.score}
+                onPlayerRemove={props.onPlayerRemove}
                 onPlayerScoreChange={points => props.onScoreUpdate(i, points)}
+                onPlayerNameChange={newName => props.onNameUpdate(i, newName)}
             />
         ))}
     </ul>

@@ -10,7 +10,8 @@ it('renders correct name', () => {
     const playerNamePassed = 'Ania';
     const playerComponent = shallow(<Player name={playerNamePassed} />);
 
-    const playerNameRendered = playerComponent.find('.Player__name').text();
+    const playerNameRendered = playerComponent.find('.Player__name').render().attr('value');
+
     expect(playerNameRendered).toEqual(playerNamePassed);
 });
 
@@ -42,4 +43,25 @@ it('should call onPlayerScoreChange with 1 when minus button is clicked', () => 
    minusButton.simulate('click');
 
    expect(mockedOnPlayerScoreChange).toBeCalledWith(-1);
+});
+
+it('should call onPlayerRemove and return the index number of player', () => {
+    const playerId = 12345;
+    const mockedOnPlayerRemove = jest.fn();
+    const playerComponent = shallow(<Player id={playerId} onPlayerRemove={mockedOnPlayerRemove}/>);
+    const removeButton = playerComponent.find('.Player__button-remove');
+
+    removeButton.simulate('click');
+
+    expect(mockedOnPlayerRemove).toBeCalledWith(12345);
+});
+
+it('update name', () => {
+    const playerNameBeforeChanging = 'Ania';
+    const playerComponent = shallow(<Player name={playerNameBeforeChanging}/>);
+    const playerNameRendered = playerComponent.find('.Player__name');
+    playerNameRendered.simulate('change', {target: {value: "Anna"}});
+    const playerNameAfterChanging = playerComponent.state('name');
+
+    expect(playerNameAfterChanging).toEqual('Anna');
 });

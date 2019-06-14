@@ -1,5 +1,5 @@
 .AddPlayer {
-    margin-top: 50px;
+    margin-top: 10px;
 }
 
 .AddPlayer__input {
@@ -17,6 +17,7 @@
 .AddPlayer__submit {
     cursor: pointer;
     font-size: 14px;
+    width: 100px;
     border: none;
     padding: 6px;
     background-color: #dfe6e9;
